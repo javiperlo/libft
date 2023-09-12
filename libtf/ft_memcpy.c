@@ -1,36 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 17:55:05 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/12 18:23:33 by javperez         ###   ########.fr       */
+/*   Created: 2023/09/12 18:23:40 by javperez          #+#    #+#             */
+/*   Updated: 2023/09/12 19:10:06 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 //#include <stdio.h>
+#include <unistd.h>
+//#include <string.h>
 
-void	ft_bzero(void *str, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
 	i = 0;
 	while (i < n)
 	{
-		((unsigned char *)str)[i] = 0;
-		i++;
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		i ++;
 	}
+	
+	return (dest);
 }
 /*
 int main()
 {
-	char str[] = "Hola";
-	int len = 4;
-	printf("Antes:%s\n", str);
-	ft_bzero(str, len);
-	printf("Después:%s", str);
+	char	src[] = "javi";
+	char	dest[] = "raul";
+	int		n = 4;
+
+	printf ("MI FUNCION:\n");
+	printf ("Dest vale: %s\n", dest);
+	ft_memcpy (dest, src, n);
+	printf ("Dest ahora vale: %s\n", dest);
+	printf("FUNCION ORIGINAL\n");
+	memcpy(dest, src, n);
+	printf ("Dest ahora vale: %s\n", dest);
 	return (0);
 }*/
