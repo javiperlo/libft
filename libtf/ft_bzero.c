@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 13:19:23 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/12 17:33:47 by javperez         ###   ########.fr       */
+/*   Created: 2023/09/12 17:55:05 by javperez          #+#    #+#             */
+/*   Updated: 2023/09/12 18:19:00 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <unistd.h>
+#include <unistd.h>
+//#include <stdio.h>
 
-void	*ft_memset(void *str, int c, size_t len)
+void	ft_bzero(void *str, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	while (i < len)
+	while (i < n)
 	{
-		((unsigned char *)str)[i] = c;
+		((unsigned char *)str)[i] = 0;
 		i++;
 	}
-	return (str);
 }
 /*
-int	main(void)
+int main()
 {
-	char	str[10] = "0123456789";
-	int		c = 65;
-	size_t	len = 5;
-
-	printf("Before: %s\n", str);
-	ft_memset(str, c, len);
-	printf("After: %s\n", str);
+	char str[] = "Hola";
+	int len = 4;
+	printf("Antes:%s\n", str);
+	ft_bzero(str, len);
+	printf("Después:%s", str);
 	return (0);
 }*/
