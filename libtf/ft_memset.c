@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:19:23 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/12 13:28:19 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/12 15:09:59 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memset(char *str, int c, size_t len)
 		i++;
 	}
 }
-
+/*
 int	main(void)
 {
 	char	str[10] = "0123456789";
@@ -34,4 +34,4 @@ int	main(void)
 	ft_memset(str, c, len);
 	printf("After: %s\n", str);
 	return (0);
-}
+}*/
