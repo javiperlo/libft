@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:23:40 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/12 19:10:06 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:35:20 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 		i ++;
 	}
-	
 	return (dest);
 }
 /*

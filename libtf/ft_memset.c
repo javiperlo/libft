@@ -6,15 +6,15 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:19:23 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/12 17:33:47 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:35:42 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <unistd.h>
+#include <unistd.h>
 
 void	*ft_memset(void *str, int c, size_t len)
 {
-	size_t i;
+	size_t		i;
 
 	i = 0;
 	while (i < len)
