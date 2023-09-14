@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 15:12:17 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/13 18:57:10 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/14 12:15:53 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlcat(char *dst, char *src, size_t size)
 	{
 		i ++;
 	}
-	while (src[j] != '\0' && j < size)
+	while (src[j] != '\0' && j < size - 1)
 	{
 		dst[i + j] = src[j];
 		j ++;
@@ -36,15 +36,11 @@ size_t	ft_strlcat(char *dst, char *src, size_t size)
 /*
 int	main()
 {
-	char	src[] = "Javi";
-	char	dst[] = "Hola";
-	int		len = 1;
-	int		res;
+	char	src[] = "Holaa";
+	char	dst[] = "Adiosa";
+	int		size = 2;
 	
-	res = ft_strlcat(dst, src, len);
-	printf("Mi funcion saca este resultado: %d", res);
-	//printf("La funcion strlcat saca esto: %lu", strlcat(dst, src, len));
-}
-*/
-//Suma las dos cadenas "Javier" y "Hola" en dest y saca el numero de las dos cadenas juntas hasta 'l' numero.
-// En este caso si len = 3, sacaria 9. Javier + Hol
+	printf("La funcion strlcat saca esto: %zu\n", strlcat(dst, src, size));
+	printf("Mi funcion saca este resultado: %zu\n",ft_strlcat(dst, src, size));
+
+}*/
