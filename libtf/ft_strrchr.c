@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 13:51:47 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/14 14:46:51 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/14 19:49:21 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,30 @@
 char	*ft_strrchr(char *str, int c)
 {
 	int		i;
-	int		count;
-	
-	count = 0;
-	i = 0;
+	int		j;
 
+	i = 0;
+	j = 0;
 	while (str[i] != '\0')
 	{
 		if (str[i] == (char)c)
 		{
-			return (&str[i]);
+			j = i;
 		}
 		i ++;
 	}
-	printf ("El contador de Coincidencias vale: %d", count);
+	if (str[j] == (char)c)
+	{
+		return (&str[j]);
+	}
 	return (NULL);
 }
-
+/*
 int	main(void)
 {
-	char	str[] = "m? mola mundo";
-	int		c = 'm';
+	char	str[] = "m? ola undo";
+	int		c = 'o';
 
 	printf ("%s\n", ft_strrchr(str, c));
 	return (0);
-}
+}*/
