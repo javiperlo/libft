@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:22:46 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/13 15:52:05 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/14 20:43:30 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	if (str[i] == '+')
-			i++;
+		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + (str[i] - '0');
