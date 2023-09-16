@@ -6,13 +6,11 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 19:50:17 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/14 20:42:40 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/16 16:47:25 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

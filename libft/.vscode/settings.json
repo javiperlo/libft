@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "stdio.h": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "array": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "libft.h": "c"
     }
 }

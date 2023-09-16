@@ -6,15 +6,13 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 13:51:47 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/14 19:49:21 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/16 16:47:32 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strrchr(char *str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
 	int		i;
 	int		j;
@@ -31,7 +29,7 @@ char	*ft_strrchr(char *str, int c)
 	}
 	if (str[j] == (char)c)
 	{
-		return (&str[j]);
+		return ((char *)&str[j]);
 	}
 	return (NULL);
 }

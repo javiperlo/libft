@@ -6,15 +6,13 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 15:12:17 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/14 12:15:53 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/16 16:47:17 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlcat(char *dst, char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t		i;
 	size_t		j;
@@ -40,7 +38,7 @@ int	main()
 	char	dst[] = "Adiosa";
 	int		size = 2;
 	
-	printf("La funcion strlcat saca esto: %zu\n", strlcat(dst, src, size));
-	printf("Mi funcion saca este resultado: %zu\n",ft_strlcat(dst, src, size));
+	//printf("La funcion strlcat saca esto: %lu\n", strlcat(dst, src, size));
+	printf("Mi funcion saca este resultado: %lu\n",ft_strlcat(dst, src, size));
 
 }*/

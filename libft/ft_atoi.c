@@ -6,15 +6,13 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:22:46 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/14 20:43:30 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/16 16:46:00 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
 	int		i;
 	int		sign;
@@ -23,18 +21,18 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	result = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\r')
+	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\r')
 		i++;
-	if (str[i] == '-')
+	if (nptr[i] == '-')
 	{
 		sign = -1;
 		i++;
 	}
-	if (str[i] == '+')
+	if (nptr[i] == '+')
 		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		result = result * 10 + (str[i] - '0');
+		result = result * 10 + (nptr[i] - '0');
 		i++;
 	}
 	return (result * sign);
@@ -42,9 +40,9 @@ int	ft_atoi(const char *str)
 /*
 int	main(void)
 {
-	char	str[] = "98";
+	char	nptr[] = "98";
 	printf("MI ATOI\n");
-	printf ("%d", ft_atoi(str));
+	printf ("%d", ft_atoi(nptr));
 	printf("\nATOI ORIGINAL\n");
-	printf("%d", atoi(str));
+	printf("%d", atoi(nptr));
 }*/

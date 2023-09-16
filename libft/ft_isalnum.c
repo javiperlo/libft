@@ -6,15 +6,15 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:58:32 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/12 11:09:40 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/16 16:46:48 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
 
-int	ft_isalnum(int num)
+int	ft_isalnum(int c)
 {
-	if ((num >= 'A' && num <= 'z') || (num >= '0' && num <= '9'))
+	if ((c >= 'A' && c <= 'z') || (c >= '0' && c <= '9'))
 	{
 		return (1);
 	}

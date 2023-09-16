@@ -6,16 +6,15 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:54:09 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/12 10:57:47 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/16 16:46:42 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <unistd.h>
-//#include <stdio.h>
+#include "libft.h"
 
-int	ft_isdigit(int num)
+int	ft_isdigit(int c)
 {
-	if (num >= 0 && num <= 9)
+	if (c >= 0 && c <= 9)
 	{
 		return (1);
 	}
