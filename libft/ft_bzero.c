@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 17:55:05 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/16 16:46:08 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/17 18:48:18 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		((unsigned char *)s)[i] = 0;
+		((char *)s)[i] = 0;
 		i++;
 	}
 }
@@ -27,9 +27,15 @@ void	ft_bzero(void *s, size_t n)
 int main()
 {
 	char str[] = "Hola";
-	int len = 4;
-	printf("Antes:%s\n", str);
-	ft_bzero(str, len);
-	printf("Después:%s", str);
+	//int len = 1;
+	//printf("Antes:%s\n", str);
+	//ft_bzero(str, len);
+	//printf ("Funcion Original: %s\n", bzero(str, len));
+	write(1, "Antes: ", 7);
+	write(1, &str ,4);
+	write(1, "\nDespués: ", );
+	ft_bzero(str, ft_strlen(str));
+	write(1, &str ,4);
+	//printf("Después: %s", str);
 	return (0);
 }*/

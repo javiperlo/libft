@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 15:54:36 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/17 16:45:46 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/17 17:04:56 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include <strings.h>
 
 int		ft_atoi(const char *nptr);
 int		ft_isdigit(int c);
