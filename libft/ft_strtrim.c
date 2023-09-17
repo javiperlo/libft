@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:27:55 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/17 12:08:10 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/17 16:44:50 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,33 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		*ptr;
+	char	*ptr;
 	int		i;
+	int		j;
 
 	i = 0;
-	ptr = malloc(ft_strlen(s1) * sizeof(char));
-	printf ("Se ha reservado una memoria de malloc de: %ld bytes\n\n", ft_strlen(s1) * sizeof(char));
+	j = 0;
+	ptr = malloc((ft_strlen(s1)) * sizeof(char));
 	if (!ptr)
 		return (NULL);
 	while (s1[i] != '\0')
 	{
-		
+		if (ft_strchr(set, s1[i]) == NULL)
+		{
+			ptr[j] = s1[i];
+			j++;
+		}
+		i++;
 	}
-	return ((char *)ptr);
-	
+	ptr[j] = '\0';
+	return (ptr);
 }
-
+/*
 int	main(void)
 {
-	char	s1[] = "Javier";
-	char	set[]= "a";
+	char	s1[] = "vvvvvvvHola?";
+	char	set[]= "v";
 
-	//ft_strtrim(s1);
+	//ft_strtrim(s1, set);
 	printf ("%s", ft_strtrim(s1, set));
-}
+}*/
