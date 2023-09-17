@@ -6,13 +6,13 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 15:54:36 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/16 16:48:51 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/17 11:21:43 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-
 # define LIBFT_H
+
 # include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -41,6 +41,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int		ft_toupper(int c);
 int		ft_isascii(int c);
 void	*ft_memmove(void *dst, const void *src, size_t len);
-size_t	ft_strlen(const char *str);
+int		ft_strlen(const char *str);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif

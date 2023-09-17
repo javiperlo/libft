@@ -1,48 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/16 16:40:18 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/17 10:56:00 by javperez         ###   ########.fr       */
+/*   Created: 2023/09/17 10:56:16 by javperez          #+#    #+#             */
+/*   Updated: 2023/09/17 11:20:52 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		*ptr;
 	int		i;
+	int		*ptr;
 	int		j;
 
 	i = 0;
 	j = 0;
-	ptr = malloc(ft_strlen(s) * sizeof(char));
+	ptr = malloc ((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char));
 	if (!ptr)
 		return (NULL);
-	while (i < ft_strlen(s))
+	while (s1[i] != '\0')
 	{
-		if ((unsigned int)i >= start && (size_t)i < len)
-		{
-			((char *)ptr)[j] = s[i];
-			j ++;
-		}
+		((char *)ptr)[i] = s1[i];
 		i ++;
+	}
+	while (s2[j] != '\0')
+	{
+		((char *)ptr)[i + j] = s2[j];
+		j ++;
 	}
 	return ((char *)ptr);
 }
 /*
 int	main(void)
 {
-	char str1[] = "substr function Implementation";
-	int	start = 7;
-	int	end = 12;
+	char	s1[] = "?";
+	char	s2[] = "sd";
 
-	//ft_substr(str1, start, end);
-	printf ("Mi funcion funciona, este es el resultado: \n");
-	//ft_substr (str1, start, end);
-	printf ("%s", ft_substr(str1, start, end));
+	//ft_strjoin(s1, s2);
+	printf("%s", ft_strjoin(s1, s2));
 }*/
+/* DESCRIPCIÓN 
+	Reserva (con malloc(3)) y devuelve una nueva
+	string, formada por la concatenación de ’s1’ y
+	’s2’.
+*/

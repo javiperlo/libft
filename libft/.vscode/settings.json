@@ -5,6 +5,7 @@
         "array": "c",
         "string_view": "c",
         "initializer_list": "c",
-        "libft.h": "c"
+        "libft.h": "c",
+        "stdlib.h": "c"
     }
 }
