@@ -6,37 +6,62 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 16:47:50 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/18 13:31:06 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/18 17:43:30 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char	*ptr;
-	
-	ptr = malloc((ft_strlen (s) * sizeof(char)));
-	if (!ptr)
-		return (NULL);
-	while (*s != '\0')
+	int		i;
+	int		j;
+	int		k;
+	char	**str;
+
+	i = 0;
+	j = 0;
+	k = 0;
+	while (s[i] != '\0')
 	{
-		if (*s == c)
-		{
-			return ((char *)&*s); //Devuelvo la direccion de memoria en la que esta el puntero
-		}
-		
-		s ++;
+		if (s[i] == c)
+			j++;
+		i++;
 	}
-	
-	return (ptr);
+	str = (char **)malloc(sizeof(char *) * (j + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] != c)
+		{
+			str[k] = (char *)malloc(sizeof(char) * (j + 1));
+			if (!str[k])
+				return (NULL);
+			j = 0;
+			while (s[i] != c)
+			{
+				str[k][j] = s[i];
+				i++;
+				j++;
+			}
+			str[k][j] = '\0';
+			k++;
+		}
+		i++;
+	}
+	str[k] = NULL;
+	return (str);
 }
-
-int		main(void)
+/*
+int	main()
 {
-	char	str[] = "q hola que tal";
-	char	c;
+	char *s = "Hola que tal";
+	char c = ' ';
+	char **str;
 
-	c = 'q';
-	printf ("%s",ft_split(str, c));
-}
+	str = ft_split(s, c);
+	printf ("%s\n", str[0]);
+	return (0);
+}*/
