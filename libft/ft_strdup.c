@@ -6,23 +6,11 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 22:07:06 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/16 16:47:13 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/18 12:29:55 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_strlen(const char	*str)
-{
-	int		i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i ++;
-	}
-	return (i);
-}
 
 char	*ft_strdup(const char *s)
 {

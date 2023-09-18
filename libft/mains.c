@@ -1,42 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   mains.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/17 16:47:50 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/18 13:31:06 by javperez         ###   ########.fr       */
+/*   Created: 2023/09/18 12:25:56 by javperez          #+#    #+#             */
+/*   Updated: 2023/09/18 12:30:39 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_split(char const *s, char c)
+int     main(void)
 {
-	char	*ptr;
-	
-	ptr = malloc((ft_strlen (s) * sizeof(char)));
-	if (!ptr)
-		return (NULL);
-	while (*s != '\0')
-	{
-		if (*s == c)
-		{
-			return ((char *)&*s); //Devuelvo la direccion de memoria en la que esta el puntero
-		}
-		
-		s ++;
-	}
-	
-	return (ptr);
-}
+	char	prueba[] = "PruebaMains";
+	int		res;
 
-int		main(void)
-{
-	char	str[] = "q hola que tal";
-	char	c;
-
-	c = 'q';
-	printf ("%s",ft_split(str, c));
+	res = ft_strlen(prueba);
+	printf ("La funcion ft_strlen: %d", res);
 }
