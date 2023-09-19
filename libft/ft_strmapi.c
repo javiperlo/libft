@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:44:39 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/19 17:55:14 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/19 18:12:21 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ char	letter_to_upcase(unsigned int i, char str)
 	(void) i;
 	return (str - 32);
 }
-/*
-int	main(void)
+
+/*int	main(void)
 {
-	char str[] = "hello.";
+	char str[] = "hola tio que tal estas";
 	printf("The original string is %s\n", str);
 	char *result = ft_strmapi(str, letter_to_upcase);
 	printf("The result of using ft_strmapi is:  %s\n", result);
