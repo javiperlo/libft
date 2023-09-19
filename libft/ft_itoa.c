@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 12:52:47 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/18 20:05:28 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:58:01 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,33 +25,62 @@ int		get_digits(int n)
 	return (contador);
 }
 
-char	*ft_itoa(int n)
+char	*ft_rev(char *str)
 {
-	char	*result;
 	int		i;
-	printf ("El número %d, tiene %d dígitos.\n",n , get_digits(n));
-	 
+	int		j;
+	char	aux;
+
 	i = 0;
-	if (n == 0)	
+	j = ft_strlen(str) - 1;
+	while (i < j)
 	{
-		result = (char *)malloc(2);
-		result[0] = '0';
-		result[1] = '\0';
+		aux = str[j];
+		str[j] = str[i];
+		str[i] = aux;
+		i++;
+		j--;
 	}
-	else
-	{
-		result = (char *)malloc(get_digits(n) + 1);
-		printf ("El número %d es mayor que 0 por lo que se asignan: %d bytes. Incluyendo el nulo", n, get_digits(n) + 1);
-		int div = n / 10;
-		int	mod = n % 10;
-	}
-	return (result);
+	return (str);
 }
 
+char	*ft_itoa(int n)
+{
+    char *str;
+    int i;
+	int	numDigits;
+	int	isNeg;
+
+	isNeg = 0;
+    i =  0;
+    numDigits = get_digits(n);
+    str = (char *)malloc(sizeof(char) * (get_digits(n) + 1));
+	if (str == NULL)
+        return (NULL);
+    if (n < 0)
+    {
+		isNeg = 1;
+        n = n * -1;
+		i++;
+    }
+    if (i == 1)
+	{
+        str[0] = '-';
+	}
+	while (numDigits > 0)
+	{
+        str[i] = (n % 10) + '0';
+		n = n / 10;
+        numDigits--;
+        i++;
+	}
+	if (isNeg == 1)
+		ft_rev((&str[1]));
+	else
+		ft_rev(str);	
+    return (str);
+}
 int	main(void)
 {
-	char	*res;
-	
-	res = ft_itoa(22);
-	printf("%s", res);
+	printf("%s", ft_itoa(-23020));
 }
