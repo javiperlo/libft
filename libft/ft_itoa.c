@@ -6,16 +6,16 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 12:52:47 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/19 13:58:01 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/19 16:44:11 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		get_digits(int n)
+int	get_digits(int n)
 {
 	int		contador;
-	
+
 	contador = 0;
 	while (n != 0)
 	{
@@ -44,43 +44,44 @@ char	*ft_rev(char *str)
 	return (str);
 }
 
+int	ft_isneg(int n)
+{
+	if (n < 0)
+		return (1);
+	else
+		return (0);
+}
+
 char	*ft_itoa(int n)
 {
-    char *str;
-    int i;
-	int	numDigits;
-	int	isNeg;
+	char	*str;
+	int		i;
+	int		num_digits;
+	int		is_neg;
 
-	isNeg = 0;
-    i =  0;
-    numDigits = get_digits(n);
-    str = (char *)malloc(sizeof(char) * (get_digits(n) + 1));
-	if (str == NULL)
-        return (NULL);
-    if (n < 0)
-    {
-		isNeg = 1;
-        n = n * -1;
-		i++;
-    }
-    if (i == 1)
+	is_neg = 0;
+	num_digits = get_digits(n);
+	i = 0;
+	str = (char *)malloc(sizeof(char) * (num_digits + ft_isneg(n) + 1));
+	if (!str)
+		return (NULL);
+	if (ft_isneg(n) == 1)
 	{
-        str[0] = '-';
+		is_neg = 1;
+		str[i++] = '-';
+		n = -n;
 	}
-	while (numDigits > 0)
+	while (num_digits > 0)
 	{
-        str[i] = (n % 10) + '0';
+		str[i++] = (n % 10) + '0';
 		n = n / 10;
-        numDigits--;
-        i++;
+		num_digits--;
 	}
-	if (isNeg == 1)
-		ft_rev((&str[1]));
-	else
-		ft_rev(str);	
-    return (str);
+	ft_rev(str + is_neg);
+	return (str);
 }
+/*
 int	main(void)
 {
-	printf("%s", ft_itoa(-23020));
-}
+	printf("%s", ft_itoa(20));
+}*/
