@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 16:47:50 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/21 17:48:59 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/21 18:43:40 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,14 @@ char	**ft_split(char const *s, char c)
 	str[k] = '\0';
 	return (str);
 }
-
-int	main()
+/*
+int	main(void)
 {
 	char *s = "Hola que tal";
 	char c = ' ';
-	char **str;
+	char	**str;
 
 	str = ft_split(s, c);
 	printf ("%s\n", str[2]);
 	return (0);
-}
+}*/
