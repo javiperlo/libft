@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 16:47:50 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/21 12:48:53 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/21 17:48:59 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ int	main()
 	char **str;
 
 	str = ft_split(s, c);
-	printf ("%s\n", str[1]);
+	printf ("%s\n", str[2]);
 	return (0);
 }

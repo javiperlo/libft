@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:44:39 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/19 18:12:21 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/21 17:15:06 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (str);
 }
 
-char	letter_to_upcase(unsigned int i, char str)
+/*char	letter_to_upcase(unsigned int i, char str)
 {
 	(void) i;
 	return (str - 32);
-}
+}*/
 
 /*int	main(void)
 {
