@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:19:23 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/16 16:47:07 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/21 10:43:05 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	*ft_memset(void *s, int c, size_t n)
 int	main(void)
 {
 	char	str[10] = "0123456789";
-	int		c = 65;
+	int		c = 'a';
 	size_t	len = 5;
 
 	printf("Before: %s\n", str);
 	ft_memset(str, c, len);
-	printf("After: %s\n", str);
+	printf("After : %s\n", str);
 	return (0);
 }*/

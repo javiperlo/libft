@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:23:40 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/16 16:46:59 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/21 10:45:27 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main()
 {
 	char	src[] = "javi";
 	char	dest[] = "raul";
-	int		n = 4;
+	int		n = 1;
 
 	printf ("MI FUNCION:\n");
 	printf ("Dest vale: %s\n", dest);

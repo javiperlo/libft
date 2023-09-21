@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 16:19:33 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/16 16:47:04 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/21 11:50:20 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t		i;
-
-	i = 0;
 	if (dst == NULL && src == NULL)
 		return (NULL);
-	if (dst > src)
+	if (dst < src)
+		ft_memcpy(dst, src, len);
+	else
 	{
 		while (len > 0)
 		{
@@ -27,24 +26,19 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			len --;
 		}
 	}
-	else
-	{
-		while (i < len)
-		{
-			((char *)dst)[i] = ((char *)src)[i];
-			i ++;
-		}
-	}
 	return (dst);
 }
+
 /*
 int	main(void)
 {
-	char	src[] = "javi";
-	char	dst[] = "hola";
-	size_t	len;
+    char	src[] = "Hello World";
+    char	dst[] = "babiel";
+    size_t	len;
 
-	len = 4;
-	printf ("Función Original: %s\n", (char *)memmove(dst, src, len));
-	printf ("Mi función: %s\n", (char *)ft_memmove(dst, src, len));
+    len = 2;
+    printf("Before memmove dst = %s, src = %s\n", dst, src);
+    ft_memmove(src, dst, len);
+    printf("After memmove dst = %s\n", src);
+    return (0);
 }*/
