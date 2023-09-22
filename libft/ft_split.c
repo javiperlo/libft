@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 16:47:50 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/21 18:43:40 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/21 21:01:47 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,42 +32,33 @@ char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
-	int		k;
 	char	**str;
 
 	i = 0;
-	j = 0;
-	k = 0;
 	str = (char **)malloc(sizeof(char *) * (count_strings((char *)s, c) + 1));
 	if (!str)
 		return (NULL);
-	while (s[i] != '\0')
+	while (*s)
 	{
-		if (s[i] != c)
+		if (*s != c)
 		{
-			str[k] = (char *)malloc(sizeof(char) * (j + 1));
-			if (!str[k])
-				return (NULL);
 			j = 0;
-			while (s[i] != c && s[i] != '\0')
-			{
-				str[k][j] = s[i];
-				i++;
+			while (s[j] != c)
 				j++;
-			}
-			str[k][j] = '\0';
-			k++;
+			str[i] = ft_substr(s, 0, j);
+			s = s + j;
+			i ++;
 		}
 		else
-			i++;
+			s++;
 	}
-	str[k] = '\0';
+	str[i] = '\0';
 	return (str);
 }
 /*
 int	main(void)
 {
-	char *s = "Hola que tal";
+	char *s = "hola tio que tal";
 	char c = ' ';
 	char	**str;
 

@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:13:00 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/21 17:22:49 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/21 20:41:29 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,18 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		(*f)(i, s);
 		i ++;
 		s ++;
-	}	
+	}
 }
+/*
+void	my_function(unsigned int i, char *s)
+{
+	printf("%d: %c\n", i, *s);
+}*/
+/*
+int	main(void)
+{
+    char str[] = "Hello, world!";
+
+    ft_striteri(str, &my_function);
+    return (0);
+}*/
