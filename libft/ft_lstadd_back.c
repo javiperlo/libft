@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 21:05:15 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/24 21:37:20 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/25 17:11:24 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /**
  * Descripción: Añade el nodo 'new' al final de la lista 'lst'
 */
-
+/*
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 }
@@ -23,4 +23,4 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 int	main(void)
 {
 	
-}	
+}*/

@@ -1,32 +1,28 @@
-# Nombre del programa resultante
-NAME = libft.a
+LIB = ar rcs
+RM = rm -f
 
-# Compilador
 CC = gcc
+CCFLAGS = -Wall -Wextra -Werror
 
-# Opciones de compilación
-CFLAGS = -Wall -Wextra -Werror
+NAME = libft.a
+SRC = ft_isalnum.c ft_isascii.c ft_isprint.c ft_memcmp.c ft_memset.c ft_strlen.c ft_strnstr.c ft_tolower.c ft_bzero.c ft_isalpha.c ft_isdigit.c ft_memchr.c ft_memcpy.c ft_strchr.c ft_strlcpy.c ft_strncmp.c ft_strrchr.c ft_toupper.c ft_memmove.c ft_strdup.c
+OBJ = $(SRC:.c=.o)
+INCLUDE = libft.h
 
-# Archivos fuente
-SRCS = main.c ft_atoi.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_memcmp.c ft_memset.c ft_strlcat.c ft_strlen.c ft_strnstr.c ft_tolower.c ft_bzero.c ft_isalpha.c ft_isdigit.c ft_memchr.c ft_memcpy.c ft_strchr.c ft_strlcpy.c ft_strncmp.c ft_strrchr.c ft_toupper.c ft_memmove.c ft_strdup.c
-
-# Objetos generados a partir de los archivos fuente
-OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^
+$(NAME): $(OBJ) $(INCLUDE)
+	$(LIB) $(NAME) $(OBJ)
+
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(CC) $(CCFLAGS) -c -o $@ $<
 
 clean:
-	rm -f $(OBJS)
+	$(RM) $(OBJ) 
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
-
-.PHONY: all clean fclean re

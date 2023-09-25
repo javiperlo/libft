@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 12:25:30 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/17 15:28:35 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/25 18:07:26 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == (char)c)
-		{
-			return ((char *)&s[i]);
-		}
-		i ++;
+		if (s[i] == c)
+			return ((char *)s + i);
+		i++;
 	}
+	if (!c && s[i] == '\0')
+		return ((char *)s + i);
 	return (NULL);
 }
 /*
 int main(void)
 {
 	char	str[] = "onde estas";
-	int		c = 'd';
+	int		c = '\0';
 	//ft_strchr(str, c);
 	printf("Funcioón ORIGINAL: %s\n", strchr(str, c));
 	printf("Función MIA: %s\n", ft_strchr(str, c));

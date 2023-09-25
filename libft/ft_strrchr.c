@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 13:51:47 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/16 16:47:32 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/25 18:29:55 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,18 @@
 char	*ft_strrchr(const char *str, int c)
 {
 	int		i;
-	int		j;
+	char	*last_occurrence = NULL;
 
 	i = 0;
-	j = 0;
 	while (str[i] != '\0')
 	{
 		if (str[i] == (char)c)
-		{
-			j = i;
-		}
+			last_occurrence = (char *)&str[i];
 		i ++;
 	}
-	if (str[j] == (char)c)
-	{
-		return ((char *)&str[j]);
-	}
-	return (NULL);
+	if ((char)c == '\0')
+		return ((char *)&str[i]);
+	return (last_occurrence);
 }
 /*
 int	main(void)

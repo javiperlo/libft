@@ -1,2 +1,5 @@
 /libft/a.out
 /libft/.vscode
+.DS_Store
+.vscode/
+libft/.DS_Store
