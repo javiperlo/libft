@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 12:25:30 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/25 18:07:26 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/25 18:31:42 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ char	*ft_strchr(const char *s, int c)
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
-			return ((char *)s + i);
+			return ((char *)&s[i]);
 		i++;
 	}
 	if (!c && s[i] == '\0')
-		return ((char *)s + i);
+		return ((char *)&s[i]);
 	return (NULL);
 }
 /*

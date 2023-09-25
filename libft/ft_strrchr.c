@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 13:51:47 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/25 18:29:55 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/25 18:32:53 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 char	*ft_strrchr(const char *str, int c)
 {
 	int		i;
-	char	*last_occurrence = NULL;
+	char	*last_occurrence;
 
+	last_occurrence = NULL;
 	i = 0;
 	while (str[i] != '\0')
 	{
