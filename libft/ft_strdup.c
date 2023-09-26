@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 22:07:06 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/18 12:29:55 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/26 13:22:13 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s)
 	int		i;
 
 	i = 0;
-	ptr = malloc(ft_strlen(s) * sizeof(char));
+	ptr = malloc((ft_strlen(s) * sizeof(char)) + 1);
 	if (!ptr)
 		return (NULL);
 	while (i < ft_strlen(s))
@@ -28,11 +28,12 @@ char	*ft_strdup(const char *s)
 	}
 	((char *)ptr)[i] = '\0';
 	return ((char *)ptr);
+	free(ptr);
 }
 /*
 int	main(void)
 {
-	char	array1[] = "holamundo";
+	char	array1[] = "";
 	char	*p;
 
 	//ft_strdup(array1);

@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 14:28:02 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/16 16:47:27 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/26 14:54:27 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,28 +19,31 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	i = 0;
 	j = 0;
+	if (*needle == '\0' || needle == NULL)
+		return ((char *)haystack);
 	while (haystack[i] != '\0' && i < len)
 	{
-		while (haystack[i + j] == needle[j] && haystack[i + j] != '\0')
-			j++;
-		if (needle[j] == '\0')
+		j = 0;
+		while (needle[j] == haystack[i + j] && i + j < len)
 		{
-			return ((char *)haystack + i);
+			if (needle[j + 1] == '\0')
+				return ((char *)haystack + i);
+			j++;
 		}
 		i ++;
-		j = 0;
 	}
 	return (NULL);
 }
 /*
 int	main(void)
 {
-	char	str1[] = "hola que tal"; //Cadena larga (haystack)
-	char	str2[] = "que"; //Cadena a buscar (needle)
-	size_t	len = 10;
-	printf ("La funcion ORIGINAL: %s\n", strnstr(str1, str2, len));
+	char	str1[] = "aaxx"; //Cadena larga (haystack)
+	char	str2[] = "xx"; //Cadena a buscar (needle)
+	size_t	len = 3;
+	//printf ("La funcion ORIGINAL: %s\n", strnstr(str1, str2, len));
 	printf ("Mi funcion: %s", ft_strnstr((char *)str1, (char *)str2, len));
 }*/
+// El (size_t)ft_strlen(needle) + 1 >= len --> Para evitar el overlaping
 /*
 Busca la secuencia de carácteres 
 contenida en la subcadena en una cadena de texto.

@@ -6,13 +6,14 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 20:20:31 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/24 21:44:35 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/25 11:59:56 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
+echo -e "${endColour}"
 	lst: la dirección de un puntero al primer nodo de
 	una lista.
 	new: un puntero al nodo que añadir al principio de

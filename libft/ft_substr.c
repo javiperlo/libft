@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 16:40:18 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/17 10:56:00 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/26 15:54:44 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 
 	i = 0;
 	j = 0;
-	ptr = malloc(ft_strlen(s) * sizeof(char));
+	ptr = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!ptr)
 		return (NULL);
 	while (i < ft_strlen(s))
@@ -32,17 +32,18 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		}
 		i ++;
 	}
+	((char *)ptr)[j] = '\0';
 	return ((char *)ptr);
 }
-/*
+
 int	main(void)
 {
-	char str1[] = "substr function Implementation";
-	int	start = 7;
-	int	end = 12;
+	char str1[] = "hola";
+	int	start = 2;
+	int	end = 1;
 
 	//ft_substr(str1, start, end);
 	printf ("Mi funcion funciona, este es el resultado: \n");
 	//ft_substr (str1, start, end);
 	printf ("%s", ft_substr(str1, start, end));
-}*/
+}
