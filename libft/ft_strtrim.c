@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:27:55 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/17 16:44:50 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/26 21:15:28 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	j = 0;
-	ptr = malloc((ft_strlen(s1)) * sizeof(char));
+	ptr = malloc((ft_strlen(s1)) * sizeof(char) + 1);
 	if (!ptr)
 		return (NULL);
 	while (s1[i] != '\0')
