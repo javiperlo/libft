@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:27:55 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/26 21:15:28 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/27 19:51:57 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,22 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*ptr;
-	int		i;
-	int		j;
+	size_t	i;
 
-	i = 0;
-	j = 0;
-	ptr = malloc((ft_strlen(s1)) * sizeof(char) + 1);
-	if (!ptr)
-		return (NULL);
-	while (s1[i] != '\0')
-	{
-		if (ft_strchr(set, s1[i]) == NULL)
-		{
-			ptr[j] = s1[i];
-			j++;
-		}
-		i++;
-	}
-	ptr[j] = '\0';
-	return (ptr);
+	if (!s1 || !set)
+		return (0);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	i = ft_strlen(s1);
+	while (i && ft_strchr(set, s1[i]))
+		i--;
+	return (ft_substr(s1, 0, i + 1));
 }
 /*
 int	main(void)
 {
-	char	s1[] = "vvvvvvvHola?";
-	char	set[]= "v";
+	char	s1[] = "  v ho v       v la  ";
+	char	set[]= " ";
 
 	//ft_strtrim(s1, set);
 	printf ("%s", ft_strtrim(s1, set));

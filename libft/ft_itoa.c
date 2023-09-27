@@ -6,51 +6,62 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 12:52:47 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/26 21:37:17 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/27 17:07:34 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_digits(int n)
+int	count_num_digits(int n)
 {
-	int		contador;
+	int	digits;
 
-	contador = 0;
-	while (n != 0)
+	digits = 0;
+	if (n == -2147483648)
+		return (11);
+	if (n < 0)
+	{
+		n = -n;
+		digits++;
+	}
+	if (n == 0)
+		return (1);
+	while (n > 9)
 	{
 		n = n / 10;
-		contador ++;
+		digits++;
 	}
-	return (contador);
+	digits++;
+	return (digits);
 }
 
 char	*ft_itoa(int n)
 {
-	int		i;
-	char	*dest;
-	long	nb;
+	char		*str;
+	int			size;
+	long long	num;
 
-	nb = n;
-	i = get_digits(nb);
-	dest = malloc((sizeof(char) * (i + 1)));
-	if (!dest)
+	num = n;
+	size = count_num_digits(num);
+	str = malloc(sizeof(char) * size + 1);
+	if (num == 0)
+		str[0] = '0';
+	if (!str || str == NULL)
 		return (NULL);
-	dest[i--] = '\0';
-	if (nb < 0)
+	str[size] = '\0';
+	if (num < 0)
 	{
-		i ++;
-		dest[0] = '-';
-		nb *= -1;
+		num *= -1;
+		str[0] = '-';
 	}
-	if (nb == 0)
-		dest[0] = '0';
-	while (nb > 0)
+	size--;
+	while (num)
 	{
-		dest[i--] = '0' + (nb % 10);
-		nb /= 10;
+		str[size] = ((num % 10) + '0');
+		num = num / 10;
+		size--;
 	}
-	return (dest);
+	return (str);
 }
 /*
 int	main(void)
