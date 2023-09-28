@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 12:52:47 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/27 17:07:34 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/28 11:56:17 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ char	*ft_itoa(int n)
 
 	num = n;
 	size = count_num_digits(num);
-	str = malloc(sizeof(char) * size + 1);
+	str = malloc((sizeof(char) * size) + 1);
+	if (!str)
+		return (NULL);
 	if (num == 0)
 		str[0] = '0';
-	if (!str || str == NULL)
-		return (NULL);
 	str[size] = '\0';
 	if (num < 0)
 	{
@@ -66,5 +66,5 @@ char	*ft_itoa(int n)
 /*
 int	main(void)
 {
-	printf("%s", ft_itoa(-1000034));
+	printf("%s", ft_itoa(0));
 }*/

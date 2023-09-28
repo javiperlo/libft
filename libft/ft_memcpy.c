@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:23:40 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/21 10:45:27 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/28 10:39:29 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	size_t	i;
 
 	i = 0;
+	if (!dest && !src)
+		return (NULL);
 	while (i < n)
 	{
 		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
