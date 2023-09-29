@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 13:24:19 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/29 13:31:30 by javperez         ###   ########.fr       */
+/*   Updated: 2023/09/29 13:34:01 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,10 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst -> next;
 	}
 }
+
+/**
+ * Recorermos cada elemento de la lista
+ * y en cada elemento a aplicamos el valro
+ * de f() a lst -> content. 
+ * Y seguimos iterando
+*/
