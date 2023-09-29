@@ -6,7 +6,7 @@
 #    By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/27 20:54:57 by javperez          #+#    #+#              #
-#    Updated: 2023/09/28 11:31:19 by javperez         ###   ########.fr        #
+#    Updated: 2023/09/29 13:27:29 by javperez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRC = ft_isalnum.c ft_isascii.c ft_strlcat.c ft_atoi.c\
 	ft_itoa.c ft_strtrim.c ft_strjoin.c ft_substr.c ft_strdup.c\
 	ft_calloc.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstsize.c ft_lstlast.c\
 
 NAME = libft.a
 INCLUDE = libft.h
