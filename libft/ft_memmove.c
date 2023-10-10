@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 16:19:33 by javperez          #+#    #+#             */
-/*   Updated: 2023/10/04 12:50:23 by javperez         ###   ########.fr       */
+/*   Updated: 2023/10/10 14:55:07 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(void)
 
     len = 2;
     printf("Before memmove dst = %s, src = %s\n", dst, src);
-    ft_memmove(src, dst, len);
+    ft_memmove(src, src+2 , len);
     printf("After memmove dst = %s\n", src);
     return (0);
 }*/
