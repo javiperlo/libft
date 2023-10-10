@@ -6,11 +6,19 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:27:55 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/28 11:31:17 by javperez         ###   ########.fr       */
+/*   Updated: 2023/10/10 11:10:32 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+/**
+ * This funcion returns the string s1 without the characters
+ * of set at the beginning and the end of the string.
+ * Search for the first character that is not in set
+ * and search for the last character that is not in set.
+ * And then return a substring from the first character
+ * to the last character. Withouth the characters of set.
+*/
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

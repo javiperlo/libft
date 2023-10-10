@@ -6,11 +6,14 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 16:40:18 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/28 12:04:22 by javperez         ###   ########.fr       */
+/*   Updated: 2023/10/10 11:11:14 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//substr() function allocates with malloc() 
+//and returns a substring from the string ’s’.
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
@@ -35,11 +38,15 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	ptr[i] = '\0';
 	return (ptr);
 }
+
+//This function returns a tring from the string ’s’.
+//Starting from the index ’start’ and ending on length ’len’.
 /*
 int	main(void)
 {
-	char str1[] = "";
-	int	start = 5;
-	int	end = 2;
+	char str1[] = "Hello World";
+	int	start = 2;
+	int	end = 4;
 	printf ("%s", ft_substr(str1, start, end));
-}*/
+}
+*/

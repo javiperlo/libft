@@ -6,26 +6,31 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 16:47:50 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/21 21:01:47 by javperez         ###   ########.fr       */
+/*   Updated: 2023/10/10 11:19:16 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_strings(char *str, char c)
+static int	count_strings(const char *s, char c)
 {
+	int		count;
 	int		i;
-	int		j;
+	int		len;
 
+	count = 0;
 	i = 0;
-	j = 0;
-	while (str[i] != '\0')
+	len = ft_strlen(s);
+	while (i < len)
 	{
-		if (str[i] == c)
-			j++;
-		i++;
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+			count++;
+		while (s[i] != c && s[i] != '\0')
+			i++;
 	}
-	return (j);
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
@@ -35,30 +40,30 @@ char	**ft_split(char const *s, char c)
 	char	**str;
 
 	i = 0;
-	str = (char **)malloc(sizeof(char *) * (count_strings((char *)s, c) + 1));
-	if (!str)
+	j = 0;
+	str = (char **)malloc(sizeof(char *) * (count_strings(s, c) + 1));
+	if (!s || !str)
 		return (NULL);
 	while (*s)
 	{
 		if (*s != c)
 		{
 			j = 0;
-			while (s[j] != c)
+			while (s[j] != c && s[j])
 				j++;
-			str[i] = ft_substr(s, 0, j);
-			s = s + j;
-			i ++;
+			str[i++] = ft_substr(s, 0, j);
+			s += j;
 		}
 		else
 			s++;
 	}
-	str[i] = '\0';
+	str[i] = NULL;
 	return (str);
 }
 /*
 int	main(void)
 {
-	char *s = "hola tio que tal";
+	char *s = "hello!";
 	char c = ' ';
 	char	**str;
 

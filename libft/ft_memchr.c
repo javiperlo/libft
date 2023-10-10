@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 11:39:21 by javperez          #+#    #+#             */
-/*   Updated: 2023/09/28 12:03:19 by javperez         ###   ########.fr       */
+/*   Updated: 2023/10/04 13:11:08 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	char			*s;
 
 	i = 0;
-	if (str == NULL)
-		return (NULL);
 	s = (char *)str;
 	while (i < n)
 	{
@@ -29,15 +27,23 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	}
 	return (NULL);
 }
+/**
+ * Busca la primera coincidencia del caracter 'c'
+ * dentro de la cadena str. Con un limite de
+ * caracteres 'n'. Si no encuentra esa letra
+ * dentro del limite de caracteres, retornará NULL.
+ * Si la encuentra devolvera un puntero a la dirección
+ * de memoria del caracter iterado.
+*/
 /*
 int	main(void)
 {
-	char cadena[] = "Eraese una nohay.desbordamientodememoriaaaaaaaaaaaaaaaaaa";
+	char cadena[] = "Hollslllllllaa";
 	char *puntero; 
 	//char *puntero_funcion_original;
 	
 	char	caracter = 's';
-	int	len = 17;
+	int	len = 3;
 	puntero = (char *)ft_memchr( cadena, caracter, len);
 	//puntero_funcion_original = (char *)memchr(cadena, caracter, len);
 	//printf( "La cadena original es: %s", cadena); 
