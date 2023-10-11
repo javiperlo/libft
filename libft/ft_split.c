@@ -6,68 +6,90 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 16:47:50 by javperez          #+#    #+#             */
-/*   Updated: 2023/10/10 16:36:17 by javperez         ###   ########.fr       */
+/*   Updated: 2023/10/11 12:18:59 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_strings(const char *s, char c)
+static int	ft_count_word(char const *s, char c)
 {
-	int		count;
-	int		i;
-	int		len;
+	int	i;
+	int	words;
 
-	count = 0;
 	i = 0;
-	len = ft_strlen(s);
-	while (i < len)
+	words = 0;
+	while (s[i] != '\0')
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != '\0')
-			count++;
-		while (s[i] != c && s[i] != '\0')
+		if (s[i] != c)
+		{
+			words++;
+			while (s[i] != c && s[i] != '\0')
+				i++;
+		}
+		else
 			i++;
 	}
-	return (count);
+	return (words);
+}
+
+static int	ft_size_word(char const *s, char c, int i)
+{
+	int	size;
+
+	size = 0;
+	while (s[i] != c && s[i])
+	{
+		size++;
+		i++;
+	}
+	return (size);
+}
+
+static void	ft_free(char **strs, int j)
+{
+	while (j-- > 0)
+		free(strs[j]);
+	free(strs);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	int		i;
+	char	**strs;
+	int		size;
 	int		j;
-	char	**str;
 
 	i = 0;
-	j = 0;
-	str = (char **)malloc(sizeof(char *) * (count_strings(s, c) + 1));
-	if (!s || !str)
+	j = -1;
+	strs = (char **)malloc(sizeof(char *) * (ft_count_word(s, c) + 1));
+	if (!strs)
 		return (NULL);
-	while (*s)
+	while (++j < ft_count_word(s, c))
 	{
-		if (*s != c)
+		while (s[i] == c)
+			i++;
+		size = ft_size_word(s, c, i);
+		strs[j] = ft_substr(s, i, size);
+		if (!(strs[j]))
 		{
-			j = 0;
-			while (s[j] != c && s[j])
-				j++;
-			str[i++] = ft_substr(s, 0, j);
-			s += j;
+			ft_free(strs, j);
+			return (NULL);
 		}
-		else
-			s++;
+		i += size;
 	}
-	str[i] = NULL;
-	return (str);
+	strs[j] = '\0';
+	return (strs);
 }
 /*
 int	main(void)
 {
-	char *s = "hello!";
+	char *s = "Hola como estas";
 	char c = ' ';
-	char	**str;
+	//char	**str;
 
-	str = ft_split(s, c);
-	printf ("%s\n", str[2]);
+	printf("%d\n", ft_size_word(s, c, 0));
+	//str = ft_split(s, c);
+	//printf ("%s\n", str[0]);
 	return (0);
 }*/
