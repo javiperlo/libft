@@ -6,7 +6,7 @@
 /*   By: javperez <javperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:27:55 by javperez          #+#    #+#             */
-/*   Updated: 2023/10/10 11:10:32 by javperez         ###   ########.fr       */
+/*   Updated: 2023/10/13 11:51:24 by javperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (*s1 && ft_strchr(set, *s1))
 		s1++;
 	i = ft_strlen(s1);
-	while (i && ft_strchr(set, s1[i - 1]))
+	while (ft_strchr(set, s1[i - 1]))
 		i--;
 	return (ft_substr(s1, 0, i));
 }
