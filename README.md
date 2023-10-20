@@ -1,4 +1,4 @@
-# <div align="center">📚 Libft 125/100</div>
+# <div align="center">📚 Libft 125/100:white_check_mark::white_check_mark:</div>
 ## 📝 Resumen
 Este proyecto consiste en programar una librería en C. Tu librería tendrá un montón de funciones de propósito general en las que se apoyarán tus programas. 👨‍💻
 
