@@ -1,5 +1,5 @@
 # <div align="center">📚 Libft</div>
-# <div align="center"> 125 / 100 </div>
+# <align="center"> 125 / 100
 ## 📝 Resumen
 Este proyecto consiste en programar una librería en C. Tu librería tendrá un montón de funciones de propósito general en las que se apoyarán tus programas. 👨‍💻
 
