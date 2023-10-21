@@ -1,4 +1,3 @@
-![alt text](https://user-images.githubusercontent.com/40824677/149224482-9a5f469c-4748-4dcb-8321-8eafd9a44715.png)
 # <div align="center">📚 Libft 125/100:white_check_mark:</div>
 
 ## 📝 Resumen
