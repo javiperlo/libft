@@ -2,6 +2,7 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/byaliego/42-project-badges/main/badges/libftm.png" alt="Libftm Badge">
 </p>
+
 ## 📝 Resumen
 
 Este proyecto consiste en programar una librería en C. Tu librería tendrá un montón de funciones de propósito general en las que se apoyarán tus programas. 👨‍💻
